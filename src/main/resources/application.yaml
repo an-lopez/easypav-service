@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DATABASE_URL:high-flyers1.cndtnc1eyse3.us-east-2.rds.amazonaws.com}/easypav
+    username: postgres
+    password: durazno1
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        temp:
+          use-new-id-generator-mappings: true
+          use_jdbc_metadata_defaults: false
+  application:
+    name: user-impl
+server:
+  port: 8080

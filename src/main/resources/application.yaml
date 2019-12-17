@@ -10,7 +10,7 @@ spring:
       hibernate:
         temp:
           use-new-id-generator-mappings: true
-          use_jdbc_metadata_defaults: false
+          use_jdbc_metadata_defaults: true
   application:
     name: user-impl
 server:

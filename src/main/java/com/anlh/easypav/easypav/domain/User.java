@@ -8,11 +8,11 @@ import java.util.List;
 
 @Data
 @Entity
-@Table
+@Table(name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY  )
     private int id;
     private String name;
     private String lastname;
@@ -21,8 +21,6 @@ public class User {
 
     //This way we can track how many schools or labs are using our app.
     private String school;
-
-    private List<Project> projects;
 
     public User() {
     }

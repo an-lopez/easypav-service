@@ -21,7 +21,7 @@ public class UserController {
     @Autowired
     UserService service;
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public User loginByUser(@RequestBody LoginDto login) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         User user = service.findUserByEmail(login.getEmail()).orElseThrow(() -> new AppException("Wrong user"));
@@ -31,7 +31,7 @@ public class UserController {
             throw new AppException("Wrong user");
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public User registerUser(@RequestBody RegisterDto user) {
         if (service.findUserByEmail(user.getEmail()).isPresent())
             throw new AppException("Cloned user");
